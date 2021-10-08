@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd" default-autowire="byName">
+
+
+<!--手动装配-->
+    <!--<bean id="host" name="host" class="com.pctc.service5.Host"/>
+    <bean id="display" name="display" class="com.pctc.service5.DisPlay"/>
+
+    <bean id="computer" class="com.pctc.service5.Computer">
+        <property name="host" ref="host"/>
+        <property name="disPlay" ref="display"/>
+    </bean>-->
+
+
+    <!--按类型装配-->
+<!--    <bean id="host1" name="host1" class="com.pctc.service5.Host"/>
+    <bean id="display1" name="display1" class="com.pctc.service5.DisPlay"/>
+    <bean id="computer" class="com.pctc.service5.Computer" autowire="byType"/>-->
+
+
+    <!--按名称装配-->
+  <!--  <bean id="host" name="host" class="com.pctc.service5.Host"/>
+    <bean id="display" name="disPlay" class="com.pctc.service5.DisPlay"/>
+    <bean id="computer" class="com.pctc.service5.Computer" autowire="byName"/>-->
+
+    <!--不在下面写autowire，在该文件的最上面写-->
+    <bean id="host" name="host" class="com.pctc.service5.Host"/>
+    <bean id="display" name="disPlay" class="com.pctc.service5.DisPlay"/>
+    <bean id="computer" class="com.pctc.service5.Computer"/>
+
+</beans>

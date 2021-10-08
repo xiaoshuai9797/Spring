@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<!--内部bean作为注入，没有ID名称，不能被外部引用     属性注入-->
+    <bean id="student" class="com.pctc.service3.Student">
+        <property name="book">
+            <bean class="com.pctc.service3.Book">
+                <property name="bookName" value="spring"/>
+            </bean>
+        </property>
+    </bean>
+
+    <!--内部bean作为注入,没有id名称，不能被外部引用    	构造方法注入-->
+    <bean id="student1" class="com.pctc.service3.Student">
+        <constructor-arg>
+            <bean class="com.pctc.service3.Book">
+                <property name="bookName" value="oracle"/>
+            </bean>
+        </constructor-arg>
+    </bean>
+
+</beans>

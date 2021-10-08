@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="student" class="com.pctc.service.Student">
+        <property name="name" value="肖帅"/>
+        <property name="age" value="21"/>
+        <property name="school" value="南昌航空大学科技学院"/>
+    </bean>
+
+
+
+    <bean id="productionTool" class="com.pctc.service.ProductionTool">
+        <property name="productionName" value="铁锹"/>
+    </bean>
+
+    <bean id="trafficTool" class="com.pctc.service.TrafficTool">
+        <property name="trafficName" value="电动车"/>
+    </bean>
+
+    <!--name的值是实体类中的set后面的名字第一个字母大写改成小写，大部分情况下也就是属性值
+        ref的值是当前配置文件中某个bean里面的ID的值-->
+    <bean id="worker" class="com.pctc.service.Worker">
+        <property name="productionTool" ref="productionTool"/>
+        <property name="trafficTool" ref="trafficTool"/>
+    </bean>
+</beans>

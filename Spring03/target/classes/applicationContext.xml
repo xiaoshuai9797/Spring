@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<!--service包中的两个类，使用构造方法注入-->
+
+    <bean id="book" class="com.pctc.service.Book">
+        <constructor-arg name="bookName" value="高等数学"/>
+    </bean>
+
+    <bean id="student" class="com.pctc.service.Student">
+        <constructor-arg name="book" ref="book"/>
+       <!-- <constructor-arg>
+            <ref bean="book"/>
+        </constructor-arg>-->
+    </bean>
+</beans>

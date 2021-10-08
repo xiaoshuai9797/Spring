@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="dataTypeAll" class="com.pctc.service1.DataTypeAll">
+        <property name="arrayValue">
+            <list>
+                <value>array1</value>
+                <value>array2</value>
+                <value>array3</value>
+                <value>array4</value>
+            </list>
+        </property>
+
+        <property name="listValue">
+            <list>
+                <value>list1</value>
+                <value>list2</value>
+                <value>list3</value>
+                <value>list4</value>
+            </list>
+        </property>
+
+        <property name="setValue">
+            <set>
+                <value>set1</value>
+                <value>set2</value>
+                <value>set3</value>
+                <value>set4</value>
+            </set>
+        </property>
+
+
+        <property name="mapValue">
+            <map>
+              <entry key="k1" value="value1"/>
+                <entry key="k2" value="value2"/>
+                <entry key="k3" value="value3"/>
+                <entry key="k4" value="value4"/>
+            </map>
+        </property>
+
+        <property name="proInfo">
+            <props>
+                <prop key="stature">1.78</prop>
+                <prop key="avoirdupois">140</prop>
+            </props>
+        </property>
+    </bean>
+
+
+    <bean id="book1" class="com.pctc.service1.Book">
+        <property name="bookName" value="高等数学"/>
+    </bean>
+    <bean id="book2" class="com.pctc.service1.Book">
+        <property name="bookName" value="Java课程设计"/>
+    </bean>
+    <bean id="book3" class="com.pctc.service1.Book">
+        <property name="bookName" value="Spring框架"/>
+    </bean>
+    <bean id="book4" class="com.pctc.service1.Book">
+        <property name="bookName" value="Mybatis框架"/>
+    </bean>
+
+    <bean id="dataTypeAll1" class="com.pctc.service1.DataTypeAll1">
+        <property name="listValue">
+            <list>
+                <ref bean="book1"/>
+                <ref bean="book2"/>
+                <ref bean="book3"/>
+                <ref bean="book4"/>
+            </list>
+        </property>
+    </bean>
+
+</beans>

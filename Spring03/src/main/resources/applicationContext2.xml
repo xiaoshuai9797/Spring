@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--系统Java类构建一个bean-->
+    <bean id="dateFormat" class="java.text.SimpleDateFormat">
+        <constructor-arg value="yyyy-mm-dd"/>
+    </bean>
+
+    <!--时间类型注入-->
+    <bean id="dateType" class="com.pctc.service2.DateType">
+        <property name="dateValue">
+            <bean factory-bean="dateFormat" factory-method="parse">
+                <constructor-arg value="2021-9-28"/>
+            </bean>
+        </property>
+    </bean>
+</beans>

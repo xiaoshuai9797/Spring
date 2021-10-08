@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+    <!--scope的值为单例或者多例，即在创建对象时是创建一个对象还是多个对象-->
+    <bean id="book" class="com.pctc.service7.Book" scope="prototype">
+        <property name="bookName" value="高等数学"/>
+    </bean>
+
+
+</beans>

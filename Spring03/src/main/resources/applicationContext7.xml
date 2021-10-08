@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+    <!--scope的值为单例或者多例，即在创建对象时
+    单例：即使创建两个不同的对象，其实是用一个，测试结果地址相同
+    多例：创建两个不同的。地址不一样-->
+    <bean id="book" class="com.pctc.service7.Book" scope="prototype">
+        <property name="bookName" value="高等数学"/>
+    </bean>
+
+
+</beans>

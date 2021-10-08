@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+    <beans xmlns="http://www.springframework.org/schema/beans"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xmlns:context="http://www.springframework.org/schema/context"
+           xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd">
+
+
+<!--此文件没有导包，和JDBC.properties是配合使用连接数据库的-->
+    <!-- oracle的jar包，spring的jdbc的jar ,使用pom文件-->
+
+
+    <!-- 1.加载外部资源properties文件 -->
+   <!-- <bean id="config" class="org.springframework.beans.factory.config.PreferencesPlaceholderConfigurer">
+            <property name="locations">
+                <list>
+                    <value>classpath:jdbc.properties</value>
+                </list>
+            </property>
+    </bean>-->
+
+
+    <!-- 2.加载外部资源properties文件 -->
+  <context:property-placeholder location="classpath:jdbc.properties"/>
+
+
+
+    <!-- 数据源调用 properties文件的值-->
+    <bean id="dataSource"   class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <property name="driverClassName" value="${jdbc.driver}" />
+        <property name="url" value="${jdbc.url}" />
+        <property name="username" value="${jdbc.username}" />
+        <property name="password" value="${jdbc.password}" />
+    </bean>
+
+
+
+
+
+
+</beans>

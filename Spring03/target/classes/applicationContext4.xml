@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+<!--通过调用静态工厂方法创建Bean-->
+    <bean id="musicBox" class="com.pctc.service4.MusicBoxFactory" factory-method="createMusicBox"/>
+
+
+    <!--通过调用实例工厂方法创建Bean-->
+    <bean id="musicBoxFactory1" class="com.pctc.service4.MusicBoxFactory1"/>
+    <bean id="musicBox1" factory-bean="musicBoxFactory1" factory-method="createMusicBox"/>
+
+<!--实现FactoryBean 接口在Spring IOC容器中配置Bean-->
+    <bean id="musicBox2" class="com.pctc.service4.MusicBoxFactory2"/>
+</beans>
