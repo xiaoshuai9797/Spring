@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd">
+
+
+
+<!--扫描器.头文件得加几行-->
+    <!--扫描com.pctc里面的-->
+    <context:component-scan base-package="com.pctc"/>
+
+    <!--扫描com里面的所有，也可以说是顶级扫描，扫描所有-->
+    <!--<context:component-scan base-package="com"/>-->
+
+    <!--扫描com.pctc.service里面的-->
+    <!--<context:component-scan base-package="com.pctc.service"/>-->
+</beans>
